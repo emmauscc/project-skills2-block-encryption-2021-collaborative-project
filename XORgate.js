@@ -16,5 +16,7 @@ function XORgate(a,b){
     }
 
     console.log(output);
+    console.log("gitHub demo");
+
     return output
 }
