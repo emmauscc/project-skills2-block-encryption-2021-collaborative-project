@@ -1,12 +1,13 @@
-var binaryArray=[];
-var encryptedBinaryArray=[];
+/*
+ *@author GC
+ *@param {array} input - the 8-digit binary to be shifted
+ *@param {number} key - the number of places to shift 8-digit binary
+ 
+ *@return {array} the shifted 8-digit binary
 
-for(var i=0;i<5;i++){
-    var binaryArrayToPush=[Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0),Math.floor(Math.random()*(1-0+1)+0)];
-    binaryArray.push(binaryArrayToPush);
-}
-
-console.log(binaryArray);
+  *@example
+        var encryptedBinaryArray = encrypt(binaryArray,4);
+*/
 
 function encrypt(binary,shift){
     for(var k=0;k<shift;k++){
@@ -128,12 +129,3 @@ function encrypt(binary,shift){
     return binary;
 
 }
-
-for(var i=0;i<binaryArray.length;i++){
-    var encryptedArray = encrypt(binaryArray[i],1)
-    encryptedBinaryArray.push(encryptedArray);
-}
-
-console.log(encryptedBinaryArray);
-
-//console.log(encrypt(binaryArray,1))
