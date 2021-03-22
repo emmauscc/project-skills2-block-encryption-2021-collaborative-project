@@ -1,3 +1,5 @@
+console.log("test");
+
 function convertToBinary(textIn){
     eightBitArray=[];
             asciiDec = textIn.charCodeAt(i);
