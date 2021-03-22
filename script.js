@@ -3,7 +3,6 @@ $(document).ready(main);
 
 
 function main(){
-
     var text = ReadFile("iHaveADreamPartial.txt");
 
     var binaryText = [];
@@ -23,5 +22,5 @@ function main(){
         //grady conversion
 
     }
-    
+
 }
