@@ -1,4 +1,5 @@
 /*
+ *This function encrypts 8-digit binary using a caesar cipher shift for a specified key
  *@author GC
  *@param {array} input - the 8-digit binary to be shifted
  *@param {number} key - the number of places to shift 8-digit binary
