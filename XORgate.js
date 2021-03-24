@@ -1,13 +1,22 @@
-// IV needs to be set within a loop, initally from the first binary word. Then from then on the output of Grady's function.
+/*
+ *This function encrypts 8-digit binary using a pre selected gate with a pre generated IV.
+ *@author SF
+ *@param {Character} input - the 8-digit binary to be converted.
+ *@param {IV} input - the 8-digit binary used to convert.
+ *@param {gateType} key - key to chose gate type.
+ 
+ *@return {output} the converted 8-digit binary.
 
-var a = [1,1,0,1,1,0,0,0];
-var b = [0,1,1,0,1,0,1,0]; //input needs to be an array as such.
-var output = [];
+  *@example
+        var a = [1,1,0,1,1,0,0,0];  // example character
+        var b = [0,1,1,0,1,0,1,0];  // example IV
+        var output = [];   
 
-//XORgate(character,IV);
+        var output = gate(a,b,1);
+*/         
 
-function XORgate(character,IV,gateType) {
-    if (gateType==1) {
+function gate(character,IV,gateType) {
+    if (gateType==1) { // XOR Gate
         for (x=0; x<8; x++){
             if (character[x]==IV[x]) {
                 output.push(0);
@@ -15,10 +24,25 @@ function XORgate(character,IV,gateType) {
                 output.push(1);
             }
         }
-    } else if (gateType==2) {
-
-    } else if (gateType==3) {
-
+    } else if (gateType==2) { // AND Gate
+        for (x=0; x<8; x++){
+            if (character[x] == 0 && IV[x] == 0) {
+                output.push(0);
+            } else if (character[x] == 1 && IV[x] == 1){
+                output.push(0);
+            } else {
+                output.push(1);
+            }
+        }
+    } 
+    if (gateType==3) { // OR Gate
+        for (x=0; x<8; x++){
+            if (character[x] == 0 && IV[x] == 0 || character[x] == 1 && IV[x] == 1) {
+                output.push(0);
+            } else {
+                output.push(1);
+            }
+        }
     }
 
     console.log(output);
