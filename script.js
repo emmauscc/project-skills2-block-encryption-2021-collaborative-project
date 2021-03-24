@@ -16,9 +16,7 @@ function main(){
 
     var InitialV = [0,1,1,0,1,0,1,0];
 
-    
-    
-    //var acsiDec; 
+    var encryptedText = [];
 
     for (var i=0; i<text.length; i++){
 
@@ -32,18 +30,22 @@ function main(){
 
         console.log(XORText);
 
-        //Grady output would equal variable InitialV;
+        encrypt(XORText,1); 
 
+        console.log(XORText);
 
+        InitialV = XORText;
 
-        //IV would need to be set through encrypt.js and changed everytime loop happens
-        
-        //grady conversion
+        encryptedText.push(XORText); 
 
+        console.log(encryptedText);
+
+        XORText = [];
     }
 
     console.log(binaryText);
     console.log(XORText);
+    console.log(encryptedText);
     
     function convertToBinary(textIn){
         eightBitArray=[];
@@ -87,6 +89,129 @@ function main(){
         return XORText
     }
 
+    function encrypt(binary,shift){
+        for(var k=0;k<shift;k++){
     
+            var i = 7;
+    
+            if( binary[i] == 0){ 
+    
+                binary[i] = 1;
+        
+            }else{ // binary[i] == 1
+        
+                if( binary[i-1] == 0){ 
+        
+                    binary[i-1] = 1;
+        
+                    binary[i] = 0;
+        
+                }else{ // binary[i-1] == 1
+                    if( binary[i-2] == 0){
+    
+                        binary[i-2] = 1;
+    
+                        binary[i-1] = 0;
+    
+                        binary[i] = 0;
+    
+                    }else{ // binary[i-2] == 1
+    
+                        if ( binary [i-3] == 0){ 
+    
+                            binary[i-3] = 1;
+    
+                            binary[i-2] = 0;
+    
+                            binary[i-1] = 0;
+    
+                            binary[i] = 0
+    
+                        }else{ // binary[i-3] == 1
+                            if( binary[i-4] == 0){
+    
+                                binary[i-4] = 1;
+    
+                                binary[i-3] = 0;
+    
+                                binary[i-2] = 0;
+    
+                                binary[i-1] = 0;
+    
+                                binary[i] = 0;
+                            }else{ // binary[i-4] == 1
+    
+                                if(binary[i-5] == 0){
+    
+                                    binary[i-5] = 1;
+    
+                                    binary[i-4] = 0;
+    
+                                    binary[i-3] = 0;
+    
+                                    binary[i-2] = 0;
+    
+                                    binary[i-1] = 0;
+    
+                                    binary[i] = 0;
+    
+                                }else{ // binary[i-5] == 1
+    
+                                    if(binary[i-6] == 0){
+                                        binary[i-6] = 1;
+    
+                                        binary[i-5] = 0;
+    
+                                        binary[i-4] = 0;
+    
+                                        binary[i-3] = 0;
+    
+                                        binary[i-2] = 0;
+    
+                                        binary[i-1] = 0;
+    
+                                        binary[i] = 0;
+                                    }else{ // binary[i-6] == 1
+    
+                                        if(binary[i-7] == 0){
+                                            binary[i-7] = 1;
+                                            
+                                            binary[i-6] = 0;
+    
+                                            binary[i-5] = 0;
+    
+                                            binary[i-4] = 0;
+    
+                                            binary[i-3] = 0;
+    
+                                            binary[i-2] = 0;
+    
+                                            binary[i-1] = 0;
+    
+                                            binary[i] = 0;
+                                        }else{ // binary[i-7] == 1
+                                            binary = [0,0,0,0,0,0,0,0];
+                                        }
+    
+                                    }
+    
+                                }
+    
+                            }
+                        }
+    
+                    }
+                }
+        
+            }
+        }
+    
+        return binary;
+
+        
+    
+    }
+
+
 
 }
