@@ -2,7 +2,6 @@ console.log("test");
 function convertToBinary(textIn){
     eightBitArray=[];
             asciiDec = textIn.charCodeAt(i);
-            asciiDecArray.push(textIn.charCodeAt(i));
             for(var j=7;j>-1;j--){
                 if(Math.pow(2, j)<=asciiDec){
                     eightBitArray.push(1);
@@ -11,8 +10,7 @@ function convertToBinary(textIn){
                     eightBitArray.push(0);
                 }
             }
-            binaryText.push(eightBitArray);
-            console.log(asciiDecArray);   
+            binaryText.push(eightBitArray);   
     console.log(binaryText);
     return binaryText
 }
