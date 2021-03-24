@@ -1,3 +1,13 @@
+/* 
+    *This function converts any text to binary text by taking each individual character in the text, including spaces, and converting them into their ascii decimal and then converting that number into binary
+    *@author CE // 770508F
+    *@param {string} input - text to be converted to binary
+    
+    *@return {array} 2 dimensional array of 8-bit arrays
+
+    *@example
+        var binaryText = convertToBinary(text);
+*/
 console.log("test");
 function convertToBinary(textIn){
     eightBitArray=[];
