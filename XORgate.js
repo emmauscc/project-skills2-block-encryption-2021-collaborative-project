@@ -8,8 +8,8 @@
  *@return {output} the converted 8-digit binary.
 
   *@example
-        var a = [1,1,0,1,1,0,0,0];  
-        var b = [0,1,1,0,1,0,1,0];  
+        var a = [1,1,0,1,1,0,0,0];  // example character
+        var b = [0,1,1,0,1,0,1,0];  // example IV
         var output = [];   
 
         var output = gate(a,b,1);
