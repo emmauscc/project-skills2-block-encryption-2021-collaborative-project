@@ -15,7 +15,7 @@
         var output = gate(a,b,1);
 */         
 
-function gate(character,IV,gateType) {
+function logicGate(character,IV,gateType) {
     if (gateType==1) { // XOR Gate
         for (x=0; x<8; x++){
             if (character[x]==IV[x]) {
