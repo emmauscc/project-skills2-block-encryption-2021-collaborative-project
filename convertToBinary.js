@@ -11,6 +11,8 @@
 console.log("test");
 function convertToBinary(textIn){
 
+    var binaryText = [];
+
     for(var i=0; i<textIn.length; i++){
         eightBitArray=[];
         asciiDec = textIn.charCodeAt(i);

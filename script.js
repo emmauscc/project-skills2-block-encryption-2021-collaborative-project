@@ -31,7 +31,7 @@ function main(){
 
         //console.log("initialV = "+InitialV);
 
-        var b = XORgate(a[i], InitialV, 1);
+        var b = gate(a[i], InitialV, 1);
 
         //console.log(XORText);
 
