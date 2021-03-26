@@ -1,3 +1,14 @@
+/*
+ * This function Converts Binary to numbers and then it converts numbers to text
+
+ * @author JF
+
+ * @param {Array} input - The input is an array of binary numbers.
+ 
+ * @return {string} fromCharCode is the return string which 
+
+ */
+
 var input = [1,1,0,0,1,0,0,1];
 
 function convertBinary(inputArray) {
