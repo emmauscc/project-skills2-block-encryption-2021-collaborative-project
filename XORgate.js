@@ -5,7 +5,7 @@
  *@param {IV} input - the 8-digit binary used to convert.
  *@param {gateType} key - key to chose gate type.
  
- *@return {output} the converted 8-digit binary.
+ *@return {gateOut} the converted 8-digit binary.
 
   *@example
         var a = [1,1,0,1,1,0,0,0];  // example character
@@ -15,38 +15,39 @@
         var output = gate(a,b,1);
 */         
 
-function gate(character,IV,gateType) {
+function logicGate(character,IV,gateType) {
+    
     if (gateType==1) { // XOR Gate
         for (x=0; x<8; x++){
             if (character[x]==IV[x]) {
-                output.push(0);
+                gateOut.push(0);
             } else {
-                output.push(1);
+                gateOut.push(1);
             }
         }
     } else if (gateType==2) { // AND Gate
         for (x=0; x<8; x++){
             if (character[x] == 0 && IV[x] == 0) {
-                output.push(0);
+                gateOut.push(0);
             } else if (character[x] == 1 && IV[x] == 1){
-                output.push(0);
+                gateOut.push(0);
             } else {
-                output.push(1);
+                gateOut.push(1);
             }
         }
     } 
     if (gateType==3) { // OR Gate
         for (x=0; x<8; x++){
             if (character[x] == 0 && IV[x] == 0 || character[x] == 1 && IV[x] == 1) {
-                output.push(0);
+                gateOut.push(0);
             } else {
-                output.push(1);
+                gateOut.push(1);
             }
         }
     }
 
-    console.log(output);
+    console.log(gateOut);
     console.log("gitHub demo");
 
-    return output
+    return gateOut
 }
