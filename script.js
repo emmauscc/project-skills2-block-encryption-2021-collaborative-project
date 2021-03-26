@@ -9,10 +9,10 @@ function main(){
 
     //for convertToBinary
     //var asciiDecArray = []; 
-    var eightBitArray = []; 
-    var binaryText = [];
+    //var eightBitArray = []; 
+    //var binaryText = [];
 
-    var XORText = [];
+    var GateOut = [];
 
     var InitialV = [0,1,1,0,1,0,1,0];
 
@@ -31,7 +31,7 @@ function main(){
 
         //console.log("initialV = "+InitialV);
 
-        var b = gate(a[i], InitialV, 1);
+        var b = logicGate(a[i], InitialV, 1);
 
         //console.log(XORText);
 
@@ -39,7 +39,7 @@ function main(){
 
         //console.log(XORText);
 
-        InitialV = XORText;
+        InitialV = GateOut;
 
         encryptedText.push(c); 
 
