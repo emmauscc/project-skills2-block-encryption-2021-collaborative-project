@@ -3,12 +3,12 @@ $(document).ready(main);
 
 
 function main(){
-    var text = ReadFile("iHaveADreamPartial.txt");
+    var text = ReadFile("iHaveADream.txt");
 
     console.log(text);
 
     //for convertToBinary
-    var asciiDecArray = []; 
+    //var asciiDecArray = []; 
     var eightBitArray = []; 
     var binaryText = [];
 
@@ -18,35 +18,49 @@ function main(){
 
     var encryptedText = [];
 
+    var a = convertToBinary(text); // a is 2D Array
+
+    console.log(a);
+
     for (var i=0; i<text.length; i++){
 
-        convertToBinary(text);
+        //convertToBinary(text);
 
-        var specArray = binaryText[i];
 
-        console.log("initialV = "+InitialV);
+        //var specArray = binaryText[i];
 
-        XORgate(specArray, InitialV, 1);
+        //console.log("initialV = "+InitialV);
 
-        console.log(XORText);
+        var b = gate(a[i], InitialV, 1);
 
-        encrypt(XORText,1); 
+        //console.log(XORText);
 
-        console.log(XORText);
+        var c = encrypt(b,1); // binary, mumbo jumbo
+
+        //console.log(XORText);
 
         InitialV = XORText;
 
-        encryptedText.push(XORText); 
+        encryptedText.push(c); 
 
-        console.log(encryptedText);
+        //console.log(encryptedText);
 
         XORText = [];
+        $("body").append(encryptedText[i]+"<br>");
     }
 
-    console.log(binaryText);
-    console.log(XORText);
+    //console.log(binaryText);
+    //console.log(XORText);
     console.log(encryptedText);
+
+    for (var i=0;i<text.lengt;i++){
+        encrypt(encryptedText,-1); 
+
+    }
     
+    
+/*
+
     function convertToBinary(textIn){
         eightBitArray=[];
                 asciiDec = textIn.charCodeAt(i);
@@ -212,6 +226,6 @@ function main(){
     
     }
 
-
+*/
 
 }
