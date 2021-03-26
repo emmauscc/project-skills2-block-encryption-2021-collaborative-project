@@ -22,11 +22,11 @@ function convertToBinary(textIn){
                 eightBitArray.push(0);
             }
         }
-    
+        binaryText.push(eightBitArray);
 
     }
 
-    binaryText.push(eightBitArray);   
+       
     console.log(binaryText);
     return binaryText    
 }
