@@ -3,7 +3,7 @@ $(document).ready(main);
 
 
 function main(){
-    var text = ReadFile("iHaveADream.txt");
+    var text = ReadFile("iHaveADreamPartial.txt");
 
     console.log(text);
 
@@ -12,7 +12,6 @@ function main(){
     //var eightBitArray = []; 
     //var binaryText = [];
 
-    var GateOut = [];
 
     var InitialV = [0,1,1,0,1,0,1,0];
 
@@ -22,7 +21,7 @@ function main(){
 
     console.log(a);
 
-    for (var i=0; i<text.length; i++){
+    for (var i=0; i<a.length; i++){
 
         //convertToBinary(text);
 
@@ -39,13 +38,16 @@ function main(){
 
         //console.log(XORText);
 
-        InitialV = GateOut;
+        InitialV = c;
+
+        console.log(c);
+        console.log(InitialV);
 
         encryptedText.push(c); 
 
         //console.log(encryptedText);
 
-        XORText = [];
+        gateOut = [];
         $("body").append(encryptedText[i]+"<br>");
     }
 
