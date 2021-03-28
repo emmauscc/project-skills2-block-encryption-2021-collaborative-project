@@ -8,7 +8,7 @@
  *@return {gateOut} the converted 8-digit binary.
 
   *@example
-        var a = [1,1,0,1,1,0,0,0];  // example character
+        var a = [1,1,0,0,1,0,0,0];  // example character
         var b = [0,1,1,0,1,0,1,0];  // example IV
         var output = [];   
 
